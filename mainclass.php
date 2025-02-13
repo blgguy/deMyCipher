@@ -18,7 +18,7 @@ class myCipher {
     /**
      * Generate round keys from the provided key.
      *
-     * This simple example uses SHA-256 on the key and splits it into 32-bit words.
+     * This method uses SHA-256 on the key and splits it into 32-bit words.
      */
     private function generateRoundKeys() {
         $hash = hash('sha256', $this->key);
@@ -29,13 +29,12 @@ class myCipher {
     }
 
     /**
-     * Encrypt the given plaintext.
+     * Encrypt function.
      *
      * @param string $plaintext The plaintext to encrypt.
      * @return string The Base64-encoded ciphertext.
      */
     public function encrypt($plaintext) {
-        // Pad plaintext using PKCS#7 padding.
         $padLen = $this->blockSize - (strlen($plaintext) % $this->blockSize);
         $plaintext .= str_repeat(chr($padLen), $padLen);
 
