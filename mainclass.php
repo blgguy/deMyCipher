@@ -1,6 +1,6 @@
 <?php
 class myCipher {
-    private $key;
+    private $key; // encryption keys.
     private $roundKeys = [];
     private $numRounds = 8; // Number of rounds per block encryption.
     private $blockSize = 16; // 16 bytes (128 bits) per block.
