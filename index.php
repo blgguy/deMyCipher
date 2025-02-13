@@ -1,5 +1,7 @@
 <?php
-  // Example usage:
+// include the file
+require_once('main.class.php');
+
 $encKey  = '23456ABCDetuudueu';
 $cipher = new myCipher($encKey);
 $text = "text to encrypt!";
